@@ -11,7 +11,7 @@ namespace Times_table
         static void Main(string[] args)
         {
 
-            Console.Write("Entrez un nombre pour connaître sa table de multiplication : ");
+            Console.Write("Enter a number to know its multiplication table : ");
 
             try
             {
@@ -21,6 +21,14 @@ namespace Times_table
                     int result = i * numInput;
                     Console.WriteLine($"{i} * {numInput} = {result}");
                 }
+            }
+            catch (FormatException) 
+            {
+                Console.WriteLine("Please enter a whole number");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("The number is too big or too small");
             }
             catch (Exception ex)
             {
